@@ -8,7 +8,7 @@ from langchain.llms import OpenAI
 import requests
 from wit import Wit
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 client = Wit("SPOYTVVVGBOKG4NLGM73X6BVJRF26HU4")
 
 def getLangs():
@@ -60,7 +60,7 @@ def reply(name,prompt,code):
     t_query=prompt
     if(code!='en'):
         t_query=translate(prompt,code,"en")
-    chain.llm_chain.prompt.template="Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Answer like customer support in detail. Use this customer information to make the conversation more human like. "+name+". Use bullet points where required.\n\n{context}\n\nQuestion: {question}\nHelpful Answer:"
+    chain.llm_chain.prompt.template="If it is only a greeting, greet them back,If the question is vague or it is vulgar, just say that you cant answer otherwise Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer tell them to contact the customer support at customersupport@abc.in. Answer queries related to ABC only, no other application allowed.Answer like customer support in detail. Use this customer information to make the conversation more human like. "+name+". Use bullet points where required.\n\n{context}\n\nQuestion: {question}\nHelpful Answer:"
     docs = docsearch.similarity_search(t_query)
     text=chain.run(input_documents=docs, question=t_query)
     witresponse=client.message(t_query)

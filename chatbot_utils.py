@@ -8,7 +8,7 @@ from langchain.llms import OpenAI
 import requests
 from wit import Wit
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "YOUR OPENAI KEY"
 client = Wit("SPOYTVVVGBOKG4NLGM73X6BVJRF26HU4")
 
 def getLangs():

@@ -14,7 +14,7 @@ client = Wit("SPOYTVVVGBOKG4NLGM73X6BVJRF26HU4")
 def getLangs():
     url = "https://text-translator2.p.rapidapi.com/getLanguages"
     headers = {
-        "X-RapidAPI-Key": "2820853ee3mshf9b0447869d2d4cp1c6e27jsned29a81f764a",
+        "X-RapidAPI-Key": "Your Rapid API Key",
         "X-RapidAPI-Host": "text-translator2.p.rapidapi.com"
     }
     response = requests.get(url, headers=headers)

@@ -9,7 +9,7 @@ import requests
 from wit import Wit
 
 os.environ["OPENAI_API_KEY"] = "YOUR OPENAI KEY"
-client = Wit("SPOYTVVVGBOKG4NLGM73X6BVJRF26HU4")
+client = Wit("WIT KEY")
 
 def getLangs():
     url = "https://text-translator2.p.rapidapi.com/getLanguages"
